@@ -1,6 +1,42 @@
 <!doctype html>
 <html>
 <head>
+
+<script>
+(function() {
+  const targetHash = "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4";
+
+  // パスワードチェックの関数
+  async function checkPassword() {
+    let authenticated = false;
+
+    while (!authenticated) {
+      const input = prompt("パスワードを入力してください：");
+
+      if (input === null) {
+        window.location.href = "https://google.com";
+        return;
+      }
+
+      const msgBuffer = new TextEncoder().encode(input);
+      const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+      const hashArray = Array.from(new Uint8Array(hashBuffer));
+      const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+
+      if (hashHex === targetHash) {
+        authenticated = true;
+        alert("認証に成功しました！");
+      } else {
+        alert("パスワードが違います。");
+      }
+    }
+  }
+
+  checkPassword();
+})();
+</script>
+	
+	
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="css/style.css">
