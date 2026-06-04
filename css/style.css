@@ -511,11 +511,11 @@ input[type="radio"] {
 /*フローティングバナー*/
 .floating-banner {
     position: fixed;
-    right: 20px; /* 画面右端からの距離 */
-    bottom: 20px; /* 画面下部からの距離 */
-    z-index: 9999; /* 他の要素より手前に表示 */
-    width: 150px; /* バナーの幅（必要に応じて変更） */
-    transition: transform 0.3s ease; /* マウスオーバー時の動き */
+    right: 20px; 
+    bottom: 20px; 
+    z-index: 9999; 
+    width: 150px; 
+    transition: transform 0.3s ease; 
 }
 
 /* マウスを乗せた時に少し浮かび上がらせる演出 */
@@ -525,7 +525,7 @@ input[type="radio"] {
 
 @media (max-width: 750px) {
     .floating-banner {
-        width: 100px;
+        width: 120px;
         right: 10px;
         bottom: 10px;
     }
