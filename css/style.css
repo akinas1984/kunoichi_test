@@ -525,7 +525,7 @@ input[type="radio"] {
 
 @media (max-width: 750px) {
     .floating-banner {
-        width: 180px;
+        width: 120px;
         right: 10px;
         bottom: 10px;
     }
